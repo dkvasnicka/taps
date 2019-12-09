@@ -17,13 +17,13 @@
                 &key (word-break-characters +whitespace-characters+)
                   &allow-other-keys)
   (with-input-from-string (in source)
-    (tap :words in)))
+    (tap :words in :word-break-characters word-break-characters)))
 
 (defmethod tap ((type (eql :lines))(source string)
                 &key (line-break-characters +line-break-characters+)
                   &allow-other-keys)
   (with-input-from-string (in source)
-    (tap :lines in)))
+    (tap :lines in :line-break-characters line-break-characters)))
 
 
 (defmethod tap ((type (eql :objects))(source string)
